@@ -4,7 +4,6 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -44,6 +43,9 @@ class Users extends BaseEntity {
 
   @Column({ type: "int", nullable: true })
   orientation: number;
+
+  @Column({ type: "boolean", default: false })
+  isAdmin: boolean;
 
   @CreateDateColumn() createdAt: string;
 

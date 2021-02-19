@@ -1,16 +1,14 @@
 import {
   BaseEntity,
+  BeforeInsert,
   Column,
   CreateDateColumn,
   Entity,
-  JoinTable,
-  ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 import Ride from "../Ride/Ride";
-import Users from "../User/User";
 
 @Entity()
 class KickBoard extends BaseEntity {
@@ -46,7 +44,7 @@ class KickBoard extends BaseEntity {
   @Column({ type: "int", default: 0 })
   basicTime: number;
 
-  @Column({ type: "boolean", default: false })
+  @Column({ type: "boolean", default: true })
   isExisting: boolean;
 
   @OneToMany(() => Ride, (ride) => ride.kickboard)
@@ -55,6 +53,12 @@ class KickBoard extends BaseEntity {
   @CreateDateColumn() createdAt: string;
 
   @UpdateDateColumn() updatedAt: string;
+
+  @BeforeInsert()
+  createDefultLastLocation() {
+    this.lastLatitude = this.latitude;
+    this.lastLongitude = this.longitude;
+  }
 }
 
 export default KickBoard;
