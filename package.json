@@ -1,0 +1,8 @@
+{
+  "name": "kickgoing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ddalkigum/going",
+  "author": "ddalkigum <sol35352000@gmail.com>",
+  "license": "MIT"
+}
