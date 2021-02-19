@@ -6,6 +6,7 @@ import connectionOptions from "./ormConfig";
 import app from "./app";
 
 const PORT = process.env.PORT;
+
 const server: Server = createServer(app);
 
 const start = async () => {
@@ -13,7 +14,7 @@ const start = async () => {
     await createConnection(connectionOptions).then(() => {
       console.log("DB Connection Success");
     }),
-      server.listen(3000, () =>
+      server.listen(PORT, () =>
         console.log(`Server start on http://127.0.0.1:${PORT}`)
       );
   } catch (error) {

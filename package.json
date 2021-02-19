@@ -4,7 +4,6 @@
   "description": "",
   "main": "src/server.js",
   "repository": "https://github.com/ddalkigum/going",
-  "author": "",
   "program": "mysql_node/src/app.ts",
   "scripts": {
     "start": "ts-node src/server.ts",
