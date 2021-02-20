@@ -4,28 +4,33 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
-import moment from "moment";
+} from 'typeorm';
+import moment from 'moment';
+import UserCoupon from './UserCoupon';
 
 @Entity()
 class Coupon extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
-  @Column({ type: "varchar", length: 20 })
+  @Column({ type: 'varchar', length: 20 })
   name: string;
 
-  @Column({ type: "varchar", length: 20 })
+  @Column({ type: 'varchar', length: 20 })
   discount_price: string;
 
-  @Column({ type: "datetime" })
+  @Column({ type: 'datetime' })
   startDay: string;
 
-  @Column({ type: "datetime" })
+  @Column({ type: 'datetime' })
   endDay: string;
 
-  @Column({ type: "varchar", length: 100 })
+  @Column({ type: 'varchar', length: 100 })
   description: string;
+
+  @OneToMany((type) => UserCoupon, (userCoupon) => userCoupon.coupon)
+  userCoupon: UserCoupon;
 
   @CreateDateColumn() createdAt: string;
 
@@ -33,7 +38,7 @@ class Coupon extends BaseEntity {
 
   @BeforeInsert()
   createEndDay(): void {
-    this.endDay = moment(this.startDay).add(7, "d").format("YYYY-MM-DD");
+    this.endDay = moment(this.startDay).add(7, 'd').format('YYYY-MM-DD');
   }
 }
 

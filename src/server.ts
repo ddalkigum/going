@@ -4,6 +4,7 @@ import { createServer, Server } from "http";
 import { createConnection } from "typeorm";
 import connectionOptions from "./ormConfig";
 import app from "./app";
+import "reflect-metadata";
 
 const PORT = process.env.PORT;
 

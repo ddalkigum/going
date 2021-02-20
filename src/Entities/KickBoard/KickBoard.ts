@@ -4,51 +4,63 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
-import Ride from "../Ride/Ride";
+} from 'typeorm';
+import Alarm from '../alarm/Alarm';
+import Ride from '../ride/Ride';
+import ServiceLocation from '../serviceLocation/ServiceLocation';
 
 @Entity()
 class KickBoard extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
 
-  @Column({ type: "varchar", length: 30 })
+  @Column({ type: 'varchar', length: 30 })
   name: string;
 
-  @Column({ type: "int", default: 100 })
+  @Column({ type: 'int', default: 100 })
   battery: number;
 
-  @Column({ type: "int", default: 100 })
+  @Column({ type: 'int', default: 100 })
   remaingTime: number;
 
-  @Column({ type: "double precision", default: 0 })
+  @Column({ type: 'double precision', default: 0 })
   latitude: number;
 
-  @Column({ type: "double precision", default: 0 })
+  @Column({ type: 'double precision', default: 0 })
   longitude: number;
 
-  @Column({ type: "double precision", default: 0 })
+  @Column({ type: 'double precision', default: 0 })
   lastLatitude: number;
 
-  @Column({ type: "double precision", default: 0 })
+  @Column({ type: 'double precision', default: 0 })
   lastLongitude: number;
 
-  @Column({ type: "int" })
+  @Column({ type: 'int' })
   price: number;
 
-  @Column({ type: "int" })
-  basicPrice: number;
+  @Column({ type: 'int' })
+  unLockPrice: number;
 
-  @Column({ type: "int", default: 0 })
-  basicTime: number;
+  @Column({ type: 'int', default: 0 })
+  freeTime: number;
 
-  @Column({ type: "boolean", default: true })
+  @Column({ type: 'boolean', default: true })
   isExisting: boolean;
 
-  @OneToMany(() => Ride, (ride) => ride.kickboard)
+  @OneToMany((type) => Ride, (ride) => ride.kickboard)
   ride: KickBoard;
+
+  @ManyToOne((type) => Alarm, (alarm) => alarm.kickboard)
+  alarm: Alarm;
+
+  @ManyToOne(
+    (type) => ServiceLocation,
+    (serviceLocation) => serviceLocation.kickboard,
+  )
+  serviceLocation: ServiceLocation;
 
   @CreateDateColumn() createdAt: string;
 

@@ -6,18 +6,18 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
+} from 'typeorm';
 
 @Entity()
 class Verification extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
-  @Column({ type: "varchar", length: 100 })
-  payload: string;
+  @Column({ type: 'varchar', length: 100 })
+  phoneNumber: string;
 
-  @Column({ type: "varchar", length: 100 })
+  @Column({ type: 'varchar', length: 100 })
   key: string;
 
-  @Column({ type: "boolean", default: false })
+  @Column({ type: 'boolean', default: false })
   verified: boolean;
 
   @CreateDateColumn() createdAt: string;

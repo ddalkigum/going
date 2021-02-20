@@ -1,30 +1,30 @@
-import { Request, Response } from "express";
-import Users from "../Entities/User/User";
-import Verification from "../Entities/Verification/Verification";
-import { errorGenerator, errorWrapper } from "../Errors";
-import { VerificationInput } from "../Services/UserServices";
-import createJWT from "../Utils/createJWT";
+import { Request, Response } from 'express';
+import Users from '../Entities/user/User';
+import Verification from '../Entities/verification/Verification';
+import { errorGenerator, errorWrapper } from '../Errors';
+import { VerificationInput } from '../Services/UserServices';
+import createJWT from '../Utils/createJWT';
 
 const certification = errorWrapper(
   async (request: Request, response: Response) => {
     const { phoneNumber }: VerificationInput = request.body;
-    if (!phoneNumber) errorGenerator({ statusCode: 400, message: "KEY_ERROR" });
+    if (!phoneNumber) errorGenerator({ statusCode: 400, message: 'KEY_ERROR' });
 
     await Users.create({
       phoneNumber,
     }).save();
 
     response.status(201).json({
-      message: "SUCCESS",
+      message: 'SUCCESS',
       phoneNumber,
     });
-  }
+  },
 );
 
 const signIn = errorWrapper(async (request: Request, response: Response) => {
   const { phoneNumber, key }: VerificationInput = request.body;
   const verification = await Verification.findOne({
-    payload: phoneNumber,
+    phoneNumber,
     key,
   });
   if (!verification) errorGenerator({ statusCode: 401 });
@@ -35,7 +35,7 @@ const signIn = errorWrapper(async (request: Request, response: Response) => {
   verification.save();
   const token = createJWT(user.id);
   response.status(200).json({
-    message: "Success",
+    message: 'Success',
     token,
   });
 });

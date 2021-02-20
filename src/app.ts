@@ -1,23 +1,15 @@
-import express from "express";
+import express, { Application, NextFunction, Request, Response } from "express";
 import logger from "morgan";
 import cors from "cors";
 import { generalErrorHandler } from "./Errors";
 import Routes from "./Routes";
 
-class App {
-  public app = express();
+const app: Application = express();
 
-  constructor() {
-    this.middlewares();
-  }
+app.use(express.json());
+app.options("*", cors());
+app.use(logger("dev"));
+app.use(Routes);
+app.use(generalErrorHandler);
 
-  private middlewares = (): void => {
-    this.app.use(express.json());
-    this.app.options("*", cors());
-    this.app.use(logger("dev"));
-    this.app.use(Routes);
-    this.app.use(generalErrorHandler);
-  };
-}
-
-export default new App().app;
+export default app;

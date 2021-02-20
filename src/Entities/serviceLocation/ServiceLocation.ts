@@ -1,22 +1,22 @@
 import {
   BaseEntity,
+  Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import KickBoard from '../kickBoard/KickBoard';
-import Users from '../user/User';
 
 @Entity()
-class Ride extends BaseEntity {
+class ServiceLocation extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
 
-  @ManyToOne((type) => Users, (user) => user.ride)
-  user: Users[];
+  @Column({ type: 'varchar' })
+  name: string;
 
-  @ManyToOne((type) => KickBoard, (kickboard) => kickboard.ride)
+  @OneToMany((type) => KickBoard, (kickboard) => kickboard.serviceLocation)
   kickboard: KickBoard[];
 
   @CreateDateColumn() createdAt: string;
@@ -24,4 +24,4 @@ class Ride extends BaseEntity {
   @UpdateDateColumn() updatedAt: string;
 }
 
-export default Ride;
+export default ServiceLocation;

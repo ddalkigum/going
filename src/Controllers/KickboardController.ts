@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
-import KickBoard from "../Entities/KickBoard/KickBoard";
-import { errorGenerator, errorWrapper } from "../Errors";
-import { kickboardCreateInput } from "../Services/KickboardServices";
-import cleanArgs from "../Utils/cleanArgs";
+import { Request, Response } from 'express';
+import KickBoard from '../Entities/kickBoard/KickBoard';
+import { errorGenerator, errorWrapper } from '../Errors';
+import { kickboardCreateInput } from '../Services/KickboardServices';
+import cleanArgs from '../Utils/cleanArgs';
 
 const createKickboard = errorWrapper(
   async (request: Request, response: Response) => {
@@ -15,9 +15,9 @@ const createKickboard = errorWrapper(
       ...notNull,
     }).save();
     response.status(201).json({
-      message: "SUCCESS",
+      message: 'SUCCESS',
     });
-  }
+  },
 );
 
 export default { createKickboard };
