@@ -50,6 +50,9 @@ class KickBoard extends BaseEntity {
   @Column({ type: 'boolean', default: true })
   isExisting: boolean;
 
+  @Column({ type: 'boolean', default: false })
+  isRiding: boolean;
+
   @OneToMany((type) => Ride, (ride) => ride.kickboard)
   ride: KickBoard;
 

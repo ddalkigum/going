@@ -1,5 +1,6 @@
 import {
   BaseEntity,
+  Column,
   CreateDateColumn,
   Entity,
   ManyToOne,
@@ -13,8 +14,17 @@ import Users from '../user/User';
 class Ride extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
 
+  @Column({ type: 'boolean', default: false })
+  isRiding: boolean;
+
+  @Column()
+  userId: number;
+
   @ManyToOne((type) => Users, (user) => user.ride)
   user: Users[];
+
+  @Column()
+  kickboardId: number;
 
   @ManyToOne((type) => KickBoard, (kickboard) => kickboard.ride)
   kickboard: KickBoard[];

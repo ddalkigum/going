@@ -10,9 +10,8 @@ const phoneVerification = errorWrapper(
     if (!phoneNumber) errorGenerator({ statusCode: 400, message: 'KEY_ERROR' });
 
     const oldVerification = await UserServices.findVerification(request.body);
-    if (oldVerification) {
-      oldVerification.remove();
-    }
+    if (oldVerification) oldVerification.remove();
+
     const newVerification = await UserServices.createVerification(request.body);
 
     const SMSPhoneNumber = `+82${phoneNumber.slice(1)}`;

@@ -1219,7 +1219,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/express-serve-static-core@^4.17.18":
+"@types/express-serve-static-core@*", "@types/express-serve-static-core@^4.17.18":
   version "4.17.18"
   resolved "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.18.tgz"
   integrity sha512-m4JTwx5RUBNZvky/JJ8swEJPKFd8si08pPF2PfizYjGZOKr/svUWPcoUmLow6MmPzhasphB7gSTINY67xn3JNA==
@@ -1227,6 +1227,15 @@
     "@types/node" "*"
     "@types/qs" "*"
     "@types/range-parser" "*"
+
+"@types/express-ws@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/express-ws/-/express-ws-3.0.0.tgz#89674edba2e9141916fc4d4d30fbd4f810e6b80b"
+  integrity sha512-GxsWec7Vp6h7sJuK0PwnZHeXNZnOwQn8kHAbCfvii66it5jXHTWzSg5cgHVtESwJfBLOe9SJ5wmM7C6gsDoyQw==
+  dependencies:
+    "@types/express" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/ws" "*"
 
 "@types/express@*", "@types/express@^4.17.11":
   version "4.17.11"
@@ -1375,6 +1384,13 @@
     "@types/express" "*"
     "@types/node" "*"
     "@types/q" "^0"
+
+"@types/ws@*":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-7.4.0.tgz#499690ea08736e05a8186113dac37769ab251a0e"
+  integrity sha512-Y29uQ3Uy+58bZrFLhX36hcI3Np37nqWE7ky5tjiDoy1GDZnIwVxS0CgF+s+1bXMzjKBFy+fqaRfb708iNzdinw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/yargs-parser@*":
   version "20.2.0"
@@ -1678,6 +1694,11 @@ astral-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
+
+async-limiter@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
+  integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -2475,6 +2496,13 @@ debug@^3.2.6:
   dependencies:
     ms "^2.1.1"
 
+debug@~4.1.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
+  dependencies:
+    ms "^2.1.1"
+
 decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
@@ -2956,6 +2984,13 @@ express-validator@^6.9.2:
   dependencies:
     lodash "^4.17.20"
     validator "^13.5.2"
+
+express-ws@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/express-ws/-/express-ws-4.0.0.tgz#dabd8dc974516418902a41fe6e30ed949b4d36c4"
+  integrity sha512-KEyUw8AwRET2iFjFsI1EJQrJ/fHeGiJtgpYgEWG3yDv4l/To/m3a2GaYfeGyB3lsWdvbesjF5XCMx+SVBgAAYw==
+  dependencies:
+    ws "^5.2.0"
 
 express@^4.17.1:
   version "4.17.1"
@@ -4877,6 +4912,11 @@ normalize-url@^4.1.0:
   resolved "https://registry.npmjs.org/normalize-url/-/normalize-url-4.5.0.tgz"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
 
+notepack.io@~2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/notepack.io/-/notepack.io-2.2.0.tgz#d7ea71d1cb90094f88c6f3c8d84277c2d0cd101c"
+  integrity sha512-9b5w3t5VSH6ZPosoYnyDONnUTF8o0UkBw7JLA6eBlYJWyGT1Q3vQa8Hmuj1/X6RYvHjjygBDgw6fJhe0JEojfw==
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -5368,7 +5408,7 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
-redis@^3.0.2:
+redis@^3.0.0, redis@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/redis/-/redis-3.0.2.tgz"
   integrity sha512-PNhLCrjU6vKVuMOyFu7oSP296mwBkcE6lrAjruBYG5LgdSqtRBoVQIylrMyVZD/lkF24RSNNatzvYag6HRBHjQ==
@@ -5839,6 +5879,11 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
+socket.io-adapter@~2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-2.0.3.tgz#372b7cde7a535fc4f4f0d5ac7f73952a3062d438"
+  integrity sha512-2wo4EXgxOGSFueqvHAdnmi5JLZzWqMArjuP4nqC26AtLh5PoCPsaRbRdah2xhcwTAMooZfjYiNVNkkmmSMaxOQ==
+
 socket.io-adapter@~2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/socket.io-adapter/-/socket.io-adapter-2.1.0.tgz"
@@ -5865,6 +5910,17 @@ socket.io-parser@~4.0.3, socket.io-parser@~4.0.4:
     "@types/component-emitter" "^1.2.10"
     component-emitter "~1.3.0"
     debug "~4.3.1"
+
+socket.io-redis@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/socket.io-redis/-/socket.io-redis-6.0.1.tgz#0d6c82bd6e0dcbb0d70dcbc57f0c3269e6e53594"
+  integrity sha512-RvxAhVSsDQJfDUEXUER9MvsE99XZurXkAVORjym1FTReqWlvmPVjyAnrpLlH3RxvPFdFa9sN4kmaTtyzjOtRRA==
+  dependencies:
+    debug "~4.1.0"
+    notepack.io "~2.2.0"
+    redis "^3.0.0"
+    socket.io-adapter "~2.0.0"
+    uid2 "0.0.3"
 
 socket.io@^3.1.1:
   version "3.1.1"
@@ -6412,6 +6468,11 @@ typescript@^4.1.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.5.tgz"
   integrity sha512-6OSu9PTIzmn9TCDiovULTnET6BgXtDYL4Gg4szY+cGsc3JP1dQL8qvE8kShTRx1NIw4Q9IBHlwODjkjWEtMUyA==
 
+uid2@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/uid2/-/uid2-0.0.3.tgz#483126e11774df2f71b8b639dcd799c376162b82"
+  integrity sha1-SDEm4Rd03y9xuLY53NeZw3YWK4I=
+
 undefsafe@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npmjs.org/undefsafe/-/undefsafe-2.0.3.tgz"
@@ -6704,6 +6765,13 @@ write-file-atomic@^3.0.0:
     is-typedarray "^1.0.0"
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
+
+ws@^5.2.0:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-5.2.2.tgz#dffef14866b8e8dc9133582514d1befaf96e980f"
+  integrity sha512-jaHFD6PFv6UgoIVda6qZllptQsMlDEJkTQcybzzXDYM1XO9Y8em691FGMPmM46WGyLU4z9KMgQN+qrux/nhlHA==
+  dependencies:
+    async-limiter "~1.0.0"
 
 ws@^7.2.3, ws@~7.4.2:
   version "7.4.3"

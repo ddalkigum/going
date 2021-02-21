@@ -39,6 +39,7 @@ const signIn = errorWrapper(async (request: Request, response: Response) => {
     token,
   });
 });
+
 /* 프론트 연결후 변경 
 const certification = errorWrapper(
   async (request: Request, response: Response) => {
